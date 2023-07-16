@@ -5,9 +5,11 @@ void main (){
   
   print('***=== Hospital Management System ===***');
   print('Create Your Id');
+  patientId(patientData);
+  diseaseList();
 }
 
- patientId (List<Map<String, dynamic>> patientData){
+ void patientId (List<Map<String, dynamic>> patientData){
 
   String nameInput = '';
   int idInput = 0;
@@ -27,5 +29,9 @@ void main (){
   };
   patientData.add(patientinFo);
   print('Patient Data Add Successfully');
+ }
+
+ diseaseList (){
+  print('Dr available for these treatment ');
  }
 
