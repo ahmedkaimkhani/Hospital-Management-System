@@ -53,5 +53,6 @@ diseaseList() {
   if (diseaseInput == '1') {
     print('Outpatient Department (OPD) Services');
     print('Available Drs. for OPD with there timings');
+    print(drNamesOPD);
   }
 }
