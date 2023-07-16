@@ -32,11 +32,14 @@ void main (){
  }
 
  diseaseList (){
+  String diseaseInput = ''; 
+
   print('Dr available for these treatment');
   print('Press 1 for: Outpatient Department (OPD) Services');
   print('Press 2 for: Piles Treatment (Hemorrhoids)');
   print('Press 3 for: Diabetes Treatment');
   print('Press 4 for: Respiratory Infections');
   print('Press 5 for: Cardiovascular Diseases');
+  diseaseInput = (stdin.readLineSync()!);
  }
 
