@@ -5,10 +5,9 @@ void main (){
   
   print('***=== Hospital Management System ===***');
   print('Create Your Id');
-  patientId(name: '', id: 0, age: 0);
 }
 
- patientId ({required String name, required int id, required int age}){
+ patientId (List<Map<String, dynamic>> patientData){
 
   String nameInput = '';
   int idInput = 0;
@@ -20,5 +19,13 @@ void main (){
   idInput = int.parse(stdin.readLineSync()!);
   stdout.write('Enter your name: $ageInput');
   ageInput = int.parse(stdin.readLineSync()!);
+
+  Map<String, dynamic> patientinFo = {
+    'name': nameInput,
+    'id': idInput,
+    'age': ageInput
+  };
+  patientData.add(patientinFo);
+  print('Patient Data Add Successfully');
  }
 
