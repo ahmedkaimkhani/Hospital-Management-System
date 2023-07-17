@@ -32,10 +32,17 @@ pageOne (){
 // Add Patients Function
  addPatient (){
 
-  stdout.write('Enter your Name: ');
-  String name = (stdin.readLineSync()!);
   stdout.write('Enter your Id: ');
   int id = int.parse(stdin.readLineSync()!);
+
+  if (patientExist(id)){
+    print('Patient with Id $id\nAlready exist please Enter Unique Id');
+  }
+
+  stdout.write('Enter your Name: ');
+  String name = (stdin.readLineSync()!);
+  stdout.write('Enter your Age: ');
+  int age = int.parse(stdin.readLineSync()!);
   stdout.write('Enter your Phone No: ');
   int phoneNo = int.parse(stdin.readLineSync()!);
   stdout.write('Enter your Gender: ');
@@ -46,7 +53,7 @@ pageOne (){
 
   Map<String, dynamic> newPatient = {
     'name': name,
-    'id': id,
+    'age': age,
     'phoneNo': phoneNo,
     'gender': gender,
     'address': address
@@ -54,3 +61,8 @@ pageOne (){
   patientList.add(newPatient);
   print('~~ Patient Add Successfully ~~');
  }
+
+  // if patient id exist
+  bool patientExist (int id){
+    return patientList.any((element) => element['id'] == id);
+  }
