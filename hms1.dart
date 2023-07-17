@@ -42,4 +42,7 @@ pageOne (){
   String gender = (stdin.readLineSync()!);
   stdout.write('Enter your Address: ');
   String address = (stdin.readLineSync()!);
+  print("");
+
+  Map<String, dynamic> newPatient = {};
  }
