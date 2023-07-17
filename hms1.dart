@@ -3,7 +3,7 @@ import 'dart:io';
 
 List<Map<String, dynamic>> patientList = [];
 void main (){
-
+ pageOne();
 }
 
 pageOne (){
@@ -24,5 +24,6 @@ pageOne (){
     stdout.write('Enter you option: ');
     int option = int.parse(stdin.readLineSync()!);
     print('');
+    condition = false;
   }
 }
