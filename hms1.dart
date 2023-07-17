@@ -44,5 +44,13 @@ pageOne (){
   String address = (stdin.readLineSync()!);
   print("");
 
-  Map<String, dynamic> newPatient = {};
+  Map<String, dynamic> newPatient = {
+    'name': name,
+    'id': id,
+    'phoneNo': phoneNo,
+    'gender': gender,
+    'address': address
+  };
+  patientList.add(newPatient);
+  print('~~ Patient Add Successfully ~~');
  }
