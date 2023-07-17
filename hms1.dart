@@ -36,4 +36,10 @@ pageOne (){
   String name = (stdin.readLineSync()!);
   stdout.write('Enter your Id: ');
   int id = int.parse(stdin.readLineSync()!);
+  stdout.write('Enter your Phone No: ');
+  int phoneNo = int.parse(stdin.readLineSync()!);
+  stdout.write('Enter your Gender: ');
+  String gender = (stdin.readLineSync()!);
+  stdout.write('Enter your Address: ');
+  String address = (stdin.readLineSync()!);
  }
