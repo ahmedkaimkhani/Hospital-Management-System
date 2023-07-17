@@ -6,6 +6,7 @@ void main (){
  pageOne();
 }
 
+// main screen funcction
 pageOne (){
   bool condition = true;
 
@@ -27,3 +28,12 @@ pageOne (){
     condition = false;
   }
 }
+
+// Add Patients Function
+ addPatient (){
+
+  stdout.write('Enter your Name: ');
+  String name = (stdin.readLineSync()!);
+  stdout.write('Enter your Id: ');
+  int id = int.parse(stdin.readLineSync()!);
+ }
