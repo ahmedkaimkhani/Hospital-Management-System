@@ -70,3 +70,16 @@ pageOne (){
   bool patientExist (int id){
     return patientList.any((element) => element['id'] == id);
   }
+
+  // Patient View Records 
+  patientViewRecords (){
+    if (patientList.isEmpty){
+      print('No Patient Data Found!');
+    } else {
+      print('Patient Records');
+      for (int i = 1; i <= patientList.length; i++){
+        Map<String, dynamic> patientRecordExist = patientList[1];
+        print(' Id: ${patientRecordExist['id']}\n Name: ${patientRecordExist['name']}\n Age: ${patientRecordExist['age']}\n PhoneNo: ${patientRecordExist['phoneNo']}\n Gender: ${patientRecordExist['gender']}\n Address: ${patientRecordExist['address']}');
+      }
+    }
+  }
