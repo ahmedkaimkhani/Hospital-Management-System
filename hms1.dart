@@ -25,7 +25,11 @@ pageOne (){
     stdout.write('Enter you option: ');
     int option = int.parse(stdin.readLineSync()!);
     print('');
-    condition = false;
+    // condition = false;
+    // press functions
+    if(option == 1){
+      addPatient();
+    }
   }
 }
 
