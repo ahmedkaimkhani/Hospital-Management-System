@@ -29,7 +29,7 @@ pageOne (){
     // press functions
     if(option == 1){
       addPatient();
-    } else if (option == 2){
+    } if (option == 2){
       viewPatientRecords();
     }
   }
@@ -43,6 +43,7 @@ pageOne (){
 
   if (patientExist(id)){
     print('Patient with Id $id\nAlready exist please Enter Unique Id');
+    return;
   }
 
   stdout.write('Enter your Name: ');
@@ -58,6 +59,7 @@ pageOne (){
   print("");
 
   Map<String, dynamic> newPatient = {
+    'id': id,
     'name': name,
     'age': age,
     'phoneNo': phoneNo,
@@ -79,7 +81,7 @@ pageOne (){
       print('No Patient Data Found!');
     } else {
       print('Patient Records');
-      for (int i = 1; i <= patientList.length; i++){
+      for (int i = 0; i < patientList.length - 1; i++){
         Map<String, dynamic> patientRecordExist = patientList[1];
         print(' Id: ${patientRecordExist['id']}\n Name: ${patientRecordExist['name']}\n Age: ${patientRecordExist['age']}\n PhoneNo: ${patientRecordExist['phoneNo']}\n Gender: ${patientRecordExist['gender']}\n Address: ${patientRecordExist['address']}');
       }
