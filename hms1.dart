@@ -101,14 +101,20 @@ pageOne (){
     stdout.write('Enter Id: ');
     int idInput = int.parse(stdin.readLineSync()!);
     print('');
-    for (int i = 0; i < patientList.length; i++){
-      Map<String, dynamic> searchPatient = patientList[i];
-      if (searchPatient['id'] == idInput){
-       return print(' Name: ${searchPatient['name']}\n Age: ${searchPatient['age']}\n PhoneNo: ${searchPatient['phoneNo']}\n Gender: ${searchPatient['gender']}\n Address: ${searchPatient['address']}');
-      } else if (patientList.isEmpty){
-        return print('Patient data not found');
-      } else {
-        return print('Invalid Id');
-      }
+    bool found = false;
+
+  for (int i = 0; i < patientList.length; i++) {
+    Map<String, dynamic> searchPatient = patientList[i];
+    if (searchPatient['id'] == idInput) {
+      print('Name: ${searchPatient['name']}');
+      print('Age: ${searchPatient['age']}');
+      print('PhoneNo: ${searchPatient['phoneNo']}');
+      print('Gender: ${searchPatient['gender']}');
+      print('Address: ${searchPatient['address']}');
+      
+    } else {
+      print('Patient data not found');
     }
   }
+
+}
