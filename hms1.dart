@@ -91,3 +91,18 @@ pageOne (){
       }
     }
   }
+
+  // Search Function
+  searchPatients (){
+    print('***=== Search Patient ===***');
+    print('');
+    stdout.write('Enter Id: ');
+    int idInput = int.parse(stdin.readLineSync()!);
+    print('');
+    for (int i = 0; i < patientList.length; i++){
+      Map<String, dynamic> searchPatient = patientList[i];
+      if (searchPatient['id'] == idInput){
+        print(' Name: ${searchPatient['name']}\n Age: ${searchPatient['age']}\n PhoneNo: ${searchPatient['phoneNo']}\n Gender: ${searchPatient['gender']}\n Address: ${searchPatient['address']}');
+      }
+    }
+  }
