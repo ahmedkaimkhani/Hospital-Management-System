@@ -81,6 +81,7 @@ pageOne (){
       print('No Patient Data Found!');
     } else {
       print('Patient Records');
+      print('Patients: ${patientList.length}');
       for (int i = 0; i < patientList.length ; i++){
         Map<String, dynamic> patientRecordExist = patientList[i];
         print(' Id: ${patientRecordExist['id']}\n Name: ${patientRecordExist['name']}\n Age: ${patientRecordExist['age']}\n PhoneNo: ${patientRecordExist['phoneNo']}\n Gender: ${patientRecordExist['gender']}\n Address: ${patientRecordExist['address']}');
