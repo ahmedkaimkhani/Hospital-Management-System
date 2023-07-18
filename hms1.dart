@@ -29,6 +29,8 @@ pageOne (){
     // press functions
     if(option == 1){
       addPatient();
+    } else if (option == 2){
+      viewPatientRecords();
     }
   }
 }
@@ -72,7 +74,7 @@ pageOne (){
   }
 
   // Patient View Records 
-  patientViewRecords (){
+  viewPatientRecords (){
     if (patientList.isEmpty){
       print('No Patient Data Found!');
     } else {
