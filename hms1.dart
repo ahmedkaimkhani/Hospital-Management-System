@@ -123,6 +123,11 @@ pageOne (){
   if (patientList.isEmpty){
     print('No data patient found! please add patient first');
   } 
+  stdout.write('Enter you Id: ');
+  int appoinmentId = int.parse(stdin.readLineSync()!);
+  stdout.write('Enter you Name: ');
+  String appointmentName = (stdin.readLineSync()!);
+
   bool condition = false;
 
  }
