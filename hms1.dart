@@ -31,6 +31,8 @@ pageOne (){
       addPatient();
     } if (option == 2){
       viewPatientRecords();
+    } if ( option == 3){
+      searchPatients();
     }
   }
 }
