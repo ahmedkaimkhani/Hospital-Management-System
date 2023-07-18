@@ -101,7 +101,6 @@ pageOne (){
     stdout.write('Enter Id: ');
     int idInput = int.parse(stdin.readLineSync()!);
     print('');
-    bool found = false;
 
   for (int i = 0; i < patientList.length; i++) {
     Map<String, dynamic> searchPatient = patientList[i];
@@ -117,4 +116,13 @@ pageOne (){
     }
   }
 
-}
+} 
+
+ // Add patient Appoinments Schedule
+ appoinmentsSchedule (){
+  if (patientList.isEmpty){
+    print('No data patient found! please add patient first');
+  } 
+  bool condition = false;
+
+ }
