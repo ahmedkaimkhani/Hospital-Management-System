@@ -1,16 +1,15 @@
-
 import 'dart:io';
 
 List<Map<String, dynamic>> patientList = [];
-void main (){
- pageOne();
+void main() {
+  pageOne();
 }
 
 // main screen funcction
-pageOne (){
+pageOne() {
   bool condition = true;
 
-  while(condition == true){
+  while (condition == true) {
     print('');
     print('***=== Hospital Management System ===***');
     print('');
@@ -27,23 +26,24 @@ pageOne (){
     print('');
     // condition = false;
     // press functions
-    if(option == 1){
+    if (option == 1) {
       addPatient();
-    } if (option == 2){
+    }
+    if (option == 2) {
       viewPatientRecords();
-    } if ( option == 3){
+    }
+    if (option == 3) {
       searchPatients();
     }
   }
 }
 
 // Add Patients Function
- addPatient (){
-
+addPatient() {
   stdout.write('Enter your Id: ');
   int id = int.parse(stdin.readLineSync()!);
 
-  if (patientExist(id)){
+  if (patientExist(id)) {
     print('Patient with Id $id\nAlready exist please Enter Unique Id');
     return;
   }
@@ -70,37 +70,38 @@ pageOne (){
   };
   patientList.add(newPatient);
   print('~~ Patient Add Successfully ~~');
- }
+}
 
-  // if patient id exist
-  bool patientExist (int id){
-    return patientList.any((element) => element['id'] == id);
-  }
+// if patient id exist
+bool patientExist(int id) {
+  return patientList.any((element) => element['id'] == id);
+}
 
-  // Patient View Records 
-  viewPatientRecords (){
-    if (patientList.isEmpty){
-      print('No Patient Data Found!');
-    } else {
-      print(' ***=== Patient Records ===***');
+// Patient View Records
+viewPatientRecords() {
+  if (patientList.isEmpty) {
+    print('No Patient Data Found!');
+  } else {
+    print(' ***=== Patient Records ===***');
+    print('');
+    print(' Patients: ${patientList.length}');
+    print('');
+    for (int i = 0; i < patientList.length; i++) {
+      Map<String, dynamic> patientRecordExist = patientList[i];
+      print(
+          ' Id: ${patientRecordExist['id']}\n Name: ${patientRecordExist['name']}\n Age: ${patientRecordExist['age']}\n PhoneNo: ${patientRecordExist['phoneNo']}\n Gender: ${patientRecordExist['gender']}\n Address: ${patientRecordExist['address']}');
       print('');
-      print(' Patients: ${patientList.length}');
-      print('');
-      for (int i = 0; i < patientList.length ; i++){
-        Map<String, dynamic> patientRecordExist = patientList[i];
-        print(' Id: ${patientRecordExist['id']}\n Name: ${patientRecordExist['name']}\n Age: ${patientRecordExist['age']}\n PhoneNo: ${patientRecordExist['phoneNo']}\n Gender: ${patientRecordExist['gender']}\n Address: ${patientRecordExist['address']}');
-        print('');
-      }
     }
   }
+}
 
-  // Search Function
-  searchPatients (){
-    print('***=== Search Patient ===***');
-    print('');
-    stdout.write('Enter Id: ');
-    int idInput = int.parse(stdin.readLineSync()!);
-    print('');
+// Search Function
+searchPatients() {
+  print('***=== Search Patient ===***');
+  print('');
+  stdout.write('Enter Id: ');
+  int idInput = int.parse(stdin.readLineSync()!);
+  print('');
 
   for (int i = 0; i < patientList.length; i++) {
     Map<String, dynamic> searchPatient = patientList[i];
@@ -110,19 +111,17 @@ pageOne (){
       print('PhoneNo: ${searchPatient['phoneNo']}');
       print('Gender: ${searchPatient['gender']}');
       print('Address: ${searchPatient['address']}');
-      
     } else {
       print('Patient data not found');
     }
   }
+}
 
-} 
-
- // Add patient Appoinments Schedule
- appoinmentsSchedule (){
-  if (patientList.isEmpty){
+// Add patient Appoinments Schedule
+appoinmentsSchedule() {
+  if (patientList.isEmpty) {
     print('No data patient found! please add patient first');
-  } 
+  }
   stdout.write('Enter you Id: ');
   int appoinmentId = int.parse(stdin.readLineSync()!);
   stdout.write('Enter you Name: ');
@@ -130,12 +129,22 @@ pageOne (){
 
   bool foundPatient = false;
 
-  for (int i = 0; i < patientList.length; i++){
+  for (int i = 0; i < patientList.length; i++) {
     Map<String, dynamic> appointmentPatient = patientList[i];
-    if (appointmentPatient['id'] == appoinmentId && appointmentPatient['name'] == appointmentName){
+    if (appointmentPatient['id'] == appoinmentId &&
+        appointmentPatient['name'] == appointmentName) {
+          stdout.write('Enter Dr Name: ');
+          String drName = (stdin.readLineSync()!);
+          
+          stdout.write("Enter Appointment Day: ");
+          String appointmentDay = stdin.readLineSync()!;
 
-    }
+          stdout.write("Enter Appointment Time: ");
+          String appointmentTime = stdin.readLineSync()!;
+
+          stdout.write("Enter Appointment Date: ");
+          String appointmentDate = stdin.readLineSync()!;
+
+        }
   }
-
- }
- 
+}
