@@ -145,6 +145,13 @@ appoinmentsSchedule() {
           stdout.write("Enter Appointment Date: ");
           String appointmentDate = stdin.readLineSync()!;
 
+          Map<String, dynamic> appoinments = {
+            'Dr Name': drName,
+            'Appoinment Day': appointmentDay,
+            'Appoinment Date': appointmentDate,
+            'Appoinment Time': appointmentTime
+          };
+
         }
   }
 }
