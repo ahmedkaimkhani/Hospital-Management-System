@@ -35,6 +35,9 @@ pageOne() {
     if (option == 3) {
       searchPatients();
     }
+    if (option == 4){
+      appoinmentsSchedule();
+    }
   }
 }
 
@@ -120,9 +123,6 @@ searchPatients() {
 
 // Add patient Appoinments Schedule
 appoinmentsSchedule() {
-  if (patientList.isEmpty) {
-    print('No data patient found! please add patient first');
-  }
   stdout.write('Enter you Id: ');
   int appoinmentId = int.parse(stdin.readLineSync()!);
   stdout.write('Enter you Name: ');
@@ -157,7 +157,7 @@ appoinmentsSchedule() {
         }
   }
   if (foundPatient == false){
-    print('Patient Not Found');
+    print('No patient found! please add patient first');
   } else {
     print('Add Appoinment Schedule Successfully');
   }
