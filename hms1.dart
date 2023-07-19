@@ -15,10 +15,11 @@ pageOne() {
     print('');
     print('Press 1: Add Patient');
     print('Press 2: View Patients Records');
-    print('Press 3: Search Patients');
-    print('Press 4: Appoinments Schedule');
-    print('Press 5: View Appoinments Schedule');
-    print('Press 6: Exit Program');
+    print('Press 3: Delete Patient');
+    print('Press 4: Search Patients');
+    print('Press 5: Appoinments Schedule');
+    print('Press 6: View Appoinments Schedule');
+    print('Press 7: Exit Program');
 
     print('');
     stdout.write('Enter you option: ');
@@ -32,10 +33,13 @@ pageOne() {
     if (option == 2) {
       viewPatientRecords();
     }
-    if (option == 3) {
+    if (option == 3){
+      deletePatient();
+    }
+    if (option == 4) {
       searchPatients();
     }
-    if (option == 4){
+    if (option == 5){
       appoinmentsSchedule();
     }
   }
@@ -105,6 +109,14 @@ deletePatient (){
   print('');
   stdout.write('Enter you Id: ');
   int deleteId = int.parse(stdin.readLineSync()!);
+  bool foundPatient = patientList.any((element) => element['id'] == deleteId);
+
+  if (foundPatient){
+    patientList.removeWhere((element) => element['id'] == deleteId);
+    print('Patient Delete Successfully');
+  } else {
+    print('Patient Data Not Found!');
+  }
 }
 
 // Search Function
