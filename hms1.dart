@@ -42,6 +42,9 @@ pageOne() {
     if (option == 5) {
       appoinmentsSchedule();
     }
+    if (option == 6){
+      viewAppoinmentsSchedule();
+    }
   }
 }
 
@@ -185,6 +188,10 @@ appoinmentsSchedule() {
 
 // View Appoinments Schedule
 viewAppoinmentsSchedule (){
-  var allPatientSchedule = patientList.add(appoinmentsSchedule());
-  return allPatientSchedule;
+  print('***=== View Appoinment Schedule ===***');
+  for (int i = 0; i < patientList.length; i++){
+    Map<String, dynamic> viewAppoinment = patientList[i];
+    viewAppoinment['appoinmentSchedule'].add(appoinmentsSchedule());
+ 
+  }
 }
