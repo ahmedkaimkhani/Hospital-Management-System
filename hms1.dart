@@ -99,6 +99,14 @@ viewPatientRecords() {
   }
 }
 
+// Delete Patients
+deletePatient (){
+  print('***=== Delete Patient ===***');
+  print('');
+  stdout.write('Enter you Id: ');
+  int deleteId = int.parse(stdin.readLineSync()!);
+}
+
 // Search Function
 searchPatients() {
   print('***=== Search Patient ===***');
