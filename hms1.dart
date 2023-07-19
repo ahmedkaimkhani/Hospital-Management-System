@@ -128,6 +128,14 @@ pageOne (){
   stdout.write('Enter you Name: ');
   String appointmentName = (stdin.readLineSync()!);
 
-  bool condition = false;
+  bool foundPatient = false;
+
+  for (int i = 0; i < patientList.length; i++){
+    Map<String, dynamic> appointmentPatient = patientList[i];
+    if (appointmentPatient['id'] == appoinmentId && appointmentPatient['name'] == appointmentName){
+
+    }
+  }
 
  }
+ 
