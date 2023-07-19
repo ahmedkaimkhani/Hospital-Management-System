@@ -66,7 +66,8 @@ addPatient() {
     'age': age,
     'phoneNo': phoneNo,
     'gender': gender,
-    'address': address
+    'address': address,
+    'appoinmentSchedule': []
   };
   patientList.add(newPatient);
   print('~~ Patient Add Successfully ~~');
@@ -130,9 +131,9 @@ appoinmentsSchedule() {
   bool foundPatient = false;
 
   for (int i = 0; i < patientList.length; i++) {
-    Map<String, dynamic> appointmentPatient = patientList[i];
-    if (appointmentPatient['id'] == appoinmentId &&
-        appointmentPatient['name'] == appointmentName) {
+    Map<String, dynamic> addAppointment = patientList[i];
+    if (addAppointment['id'] == appoinmentId &&
+        addAppointment['name'] == appointmentName) {
           stdout.write('Enter Dr Name: ');
           String drName = (stdin.readLineSync()!);
           
@@ -151,7 +152,13 @@ appoinmentsSchedule() {
             'Appoinment Date': appointmentDate,
             'Appoinment Time': appointmentTime
           };
-
+          addAppointment['appoinmentSchedle'].add(appoinments);
+          foundPatient = true;
         }
+  }
+  if (foundPatient == false){
+    print('Patient Not Found');
+  } else {
+    print('Add Appoinment Schedule Successfully');
   }
 }
