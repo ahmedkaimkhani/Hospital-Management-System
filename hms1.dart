@@ -175,7 +175,7 @@ appoinmentsSchedule() {
         'Appoinment Date': appointmentDate,
         'Appoinment Time': appointmentTime
       };
-      addAppointment['appoinmentSchedle'].add(appoinments);
+      addAppointment['appoinmentSchedule'].add(appoinments);
       foundPatient = true;
     }
   }
