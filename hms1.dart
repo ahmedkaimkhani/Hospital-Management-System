@@ -190,9 +190,12 @@ appoinmentsSchedule() {
 // View Appoinments Schedule
 viewAppoinmentsSchedule (){
   print('***=== View Appoinment Schedule ===***');
+  print('');
   for (int i = 0; i < patientList.length; i++){
     Map<String, dynamic> patient = patientList[i];
     List<dynamic> appoinmentSchedle = patient['appoinmentSchedule']; 
+
+    print('Patients: ${patient.length}');
 
     print('Patient Id: ${patient['id']}');
     print('Patient Name: ${patient['name']}');
@@ -200,6 +203,7 @@ viewAppoinmentsSchedule (){
     if (appoinmentSchedle.isEmpty){
       print('No Patient Appoinment Schedule');
     } else {
+      print('');
       print('Patient Appoinments Schedule');
       print('');
       for (int j = 0; j < appoinmentSchedle.length; j++){
