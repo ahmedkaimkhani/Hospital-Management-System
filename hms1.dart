@@ -204,7 +204,7 @@ viewAppoinmentsSchedule (){
         Map<String, dynamic> appoinments = appoinmentSchedle[j];
         print('${j + i}');
         print('Doctor Name: ${appoinments['Dr Name']}');
-        print('Doctor Name: ${appoinments['Dr Name']}');
+        print('Appoinment Day: ${appoinments['Appoinment Day']}');
       }
     }
   }
