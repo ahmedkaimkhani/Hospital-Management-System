@@ -45,6 +45,9 @@ pageOne() {
     if (option == 6) {
       viewAppoinmentsSchedule();
     }
+    if (option == 7){
+      condition = false;
+    }
   }
 }
 
