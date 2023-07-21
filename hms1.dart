@@ -42,7 +42,7 @@ pageOne() {
     if (option == 5) {
       appoinmentsSchedule();
     }
-    if (option == 6){
+    if (option == 6) {
       viewAppoinmentsSchedule();
     }
   }
@@ -188,28 +188,28 @@ appoinmentsSchedule() {
 }
 
 // View Appoinments Schedule
-viewAppoinmentsSchedule (){
+viewAppoinmentsSchedule() {
   print('***=== View Appoinment Schedule ===***');
   print('');
-  for (int i = 0; i < patientList.length; i++){
+  for (int i = 0; i < patientList.length; i++) {
     Map<String, dynamic> patient = patientList[i];
-    List<dynamic> appoinmentSchedle = patient['appoinmentSchedule']; 
+    List<dynamic> appoinmentSchedle = patient['appoinmentSchedule'];
 
-    print('Patients: ${patient.length}');
-
-    print('Patient Id: ${patient['id']}');
-    print('Patient Name: ${patient['name']}');
-
-    if (appoinmentSchedle.isEmpty){
+    if (appoinmentSchedle.isEmpty) {
       print('No Patient Appoinment Schedule');
     } else {
       print('');
       print('Patient Appoinments Schedule');
       print('');
-      for (int j = 0; j < appoinmentSchedle.length; j++){
+      for (int j = 0; j < appoinmentSchedle.length; j++) {
         Map<String, dynamic> appoinments = appoinmentSchedle[j];
-        print('Appoinments: ${j + 1}');
+        print('Patients: ${patient.length}');
         print('');
+        print('Appoinments: ${j + 1}');
+        print('Patient Id: ${patient['id']}');
+        print('Patient Name: ${patient['name']}');
+        print('');
+        print('**== Appoinment Schedule ==**');
         print('Doctor Name: ${appoinments['Dr Name']}');
         print('Appoinment Day: ${appoinments['Appoinment Day']}');
         print('Appoinment Date: ${appoinments['Appoinment Date']}');
