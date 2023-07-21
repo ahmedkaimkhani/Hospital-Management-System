@@ -47,6 +47,7 @@ pageOne() {
     }
     if (option == 7){
       condition = false;
+      print('Exited');
     }
   }
 }
