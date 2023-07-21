@@ -177,6 +177,7 @@ appoinmentsSchedule() {
       };
       addAppointment['appoinmentSchedule'].add(appoinments);
       foundPatient = true;
+      print('');
     }
   }
   if (foundPatient == false) {
@@ -200,9 +201,11 @@ viewAppoinmentsSchedule (){
       print('No Patient Appoinment Schedule');
     } else {
       print('Patient Appoinments Schedule');
+      print('');
       for (int j = 0; j < appoinmentSchedle.length; j++){
         Map<String, dynamic> appoinments = appoinmentSchedle[j];
-        print('Appoinments ${j + i}');
+        print('Appoinments: ${j + 1}');
+        print('');
         print('Doctor Name: ${appoinments['Dr Name']}');
         print('Appoinment Day: ${appoinments['Appoinment Day']}');
         print('Appoinment Date: ${appoinments['Appoinment Date']}');
