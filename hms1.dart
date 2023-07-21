@@ -209,5 +209,6 @@ viewAppoinmentsSchedule (){
         print('Appoinment Time: ${appoinments['Appoinment Time']}');
       }
     }
+    print('');
   }
 }
