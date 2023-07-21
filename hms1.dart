@@ -206,6 +206,7 @@ viewAppoinmentsSchedule (){
         print('Doctor Name: ${appoinments['Dr Name']}');
         print('Appoinment Day: ${appoinments['Appoinment Day']}');
         print('Appoinment Date: ${appoinments['Appoinment Date']}');
+        print('Appoinment Time: ${appoinments['Appoinment Time']}');
       }
     }
   }
