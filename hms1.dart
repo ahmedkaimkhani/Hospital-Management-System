@@ -202,6 +202,8 @@ viewAppoinmentsSchedule (){
       print('Patient Appoinments Schedule');
       for (int j = 0; j < appoinmentSchedle.length; j++){
         Map<String, dynamic> appoinments = appoinmentSchedle[j];
+        print('${j + i}');
+        print('Doctor Name: ${appoinments['Dr Name']}');
         print('Doctor Name: ${appoinments['Dr Name']}');
       }
     }
