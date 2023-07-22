@@ -47,6 +47,9 @@ pageOne() {
       viewAppoinmentsSchedule();
     }
     else if (option == 7){
+      updateAddPatient();
+    }
+    else if (option == 8){
       condition = false;
       print('Exited');
     }
