@@ -19,7 +19,8 @@ pageOne() {
     print('Press 4: Search Patients');
     print('Press 5: Appoinments Schedule');
     print('Press 6: View Appoinments Schedule');
-    print('Press 7: Exit Program');
+    print('Press 7: Update Patient Record');
+    print('Press 8: Exit Program');
 
     print('');
     stdout.write('Enter you option: ');
