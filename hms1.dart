@@ -264,6 +264,13 @@ updateAddPatient() {
     String updateAddress = (stdin.readLineSync()!);
     print("");
 
-    Map<String, dynamic> updatePatient = {};
+    Map<String, dynamic> updatePatient = {
+      'UpdateName': updateName,
+      'UpdateAge': updateAge,
+      'UpdatePhoneNo': updatePhoneNo,
+      'UpdateGender': updateGender,
+      'UpdateAddress': updateAddress
+    };
+    patientList.add(updatePatient);
   }
 }
