@@ -249,6 +249,8 @@ updateAddPatient (){
       print('Name: ${newPatientList['name']}');
       print('Age: ${newPatientList['age']}');
       print('Phone Number: ${newPatientList['phoneNo']}');
+      print('Gender: ${newPatientList['gender']}');
+      print('Address: ${newPatientList['address']}');
     }
   }
 }
