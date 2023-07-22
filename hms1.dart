@@ -247,6 +247,7 @@ updateAddPatient (){
     for (int i = 0; i < patientList.length; i++){
       Map<String, dynamic> newPatientList = patientList[i];
       print('Name: ${newPatientList['name']}');
+      print('Age: ${newPatientList['age']}');
     }
   }
 }
