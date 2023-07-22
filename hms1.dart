@@ -235,3 +235,12 @@ viewAppoinmentsSchedule() {
     print('');
   }
 }
+
+// update functions
+updateAddPatient (){
+  if (patientList.isEmpty){
+    print('No Patient Records to Update');
+  } else {
+    stdout.write('Enter you Id: ');
+  }
+}
