@@ -30,26 +30,19 @@ pageOne() {
     // press functions
     if (option == 1) {
       addPatient();
-    }
-    else if (option == 2) {
+    } else if (option == 2) {
       viewPatientRecords();
-    }
-    else if (option == 3) {
+    } else if (option == 3) {
       deletePatient();
-    }
-    else if (option == 4) {
+    } else if (option == 4) {
       searchPatients();
-    }
-    else if (option == 5) {
+    } else if (option == 5) {
       appoinmentsSchedule();
-    }
-    else if (option == 6) {
+    } else if (option == 6) {
       viewAppoinmentsSchedule();
-    }
-    else if (option == 7){
+    } else if (option == 7) {
       updateAddPatient();
-    }
-    else if (option == 8){
+    } else if (option == 8) {
       condition = false;
       print('Exited');
     }
@@ -118,19 +111,19 @@ viewPatientRecords() {
 deletePatient() {
   print('***=== Delete Patient ===***');
   print('');
-  if (patientList.isEmpty){
+  if (patientList.isEmpty) {
     print('No Patient Record for Delete');
   } else {
-  stdout.write('Enter you Id: ');
-  int deleteId = int.parse(stdin.readLineSync()!);
-  bool foundPatient = patientList.any((element) => element['id'] == deleteId);
+    stdout.write('Enter you Id: ');
+    int deleteId = int.parse(stdin.readLineSync()!);
+    bool foundPatient = patientList.any((element) => element['id'] == deleteId);
 
-  if (foundPatient) {
-    patientList.removeWhere((element) => element['id'] == deleteId);
-    print('Patient Delete Successfully');
-  } else {
-    print('Patient Data Not Found!');
-  }
+    if (foundPatient) {
+      patientList.removeWhere((element) => element['id'] == deleteId);
+      print('Patient Delete Successfully');
+    } else {
+      print('Patient Data Not Found!');
+    }
   }
 }
 
@@ -138,72 +131,72 @@ deletePatient() {
 searchPatients() {
   print('***=== Search Patient ===***');
   print('');
-  if (patientList.isEmpty){
+  if (patientList.isEmpty) {
     print('No Paitent Record For Search');
   } else {
-  stdout.write('Enter Id: ');
-  int idInput = int.parse(stdin.readLineSync()!);
-  print('');
+    stdout.write('Enter Id: ');
+    int idInput = int.parse(stdin.readLineSync()!);
+    print('');
 
-  for (int i = 0; i < patientList.length; i++) {
-    Map<String, dynamic> searchPatient = patientList[i];
-    if (searchPatient['id'] == idInput) {
-      print('Name: ${searchPatient['name']}');
-      print('Age: ${searchPatient['age']}');
-      print('PhoneNo: ${searchPatient['phoneNo']}');
-      print('Gender: ${searchPatient['gender']}');
-      print('Address: ${searchPatient['address']}');
-    } else {
-      print('Invalid Patient Id');
+    for (int i = 0; i < patientList.length; i++) {
+      Map<String, dynamic> searchPatient = patientList[i];
+      if (searchPatient['id'] == idInput) {
+        print('Name: ${searchPatient['name']}');
+        print('Age: ${searchPatient['age']}');
+        print('PhoneNo: ${searchPatient['phoneNo']}');
+        print('Gender: ${searchPatient['gender']}');
+        print('Address: ${searchPatient['address']}');
+      } else {
+        print('Invalid Patient Id');
+      }
     }
-  }
   }
 }
 
 // Add patient Appoinments Schedule
 appoinmentsSchedule() {
-  if (patientList.isEmpty){
+  if (patientList.isEmpty) {
     print('No Patient Available for Schedule');
   } else {
-  stdout.write('Enter you Id: ');
-  int appoinmentId = int.parse(stdin.readLineSync()!);
-  stdout.write('Enter you Name: ');
-  String appointmentName = (stdin.readLineSync()!);
+    stdout.write('Enter you Id: ');
+    int appoinmentId = int.parse(stdin.readLineSync()!);
+    stdout.write('Enter you Name: ');
+    String appointmentName = (stdin.readLineSync()!);
 
-  bool foundPatient = false;
+    bool foundPatient = false;
 
-  for (int i = 0; i < patientList.length; i++) {
-    Map<String, dynamic> addAppointment = patientList[i];
-    if (addAppointment['id'] == appoinmentId &&
-        addAppointment['name'] == appointmentName) {
-      stdout.write('Enter Dr Name: ');
-      String drName = (stdin.readLineSync()!);
+    for (int i = 0; i < patientList.length; i++) {
+      Map<String, dynamic> addAppointment = patientList[i];
+      if (addAppointment['id'] == appoinmentId &&
+          addAppointment['name'] == appointmentName) {
+        stdout.write('Enter Dr Name: ');
+        String drName = (stdin.readLineSync()!);
 
-      stdout.write("Enter Appointment Day: ");
-      String appointmentDay = stdin.readLineSync()!;
+        stdout.write("Enter Appointment Day: ");
+        String appointmentDay = stdin.readLineSync()!;
 
-      stdout.write("Enter Appointment Time: ");
-      var appointmentTime = stdin.readLineSync()!;
+        stdout.write("Enter Appointment Time: ");
+        var appointmentTime = stdin.readLineSync()!;
 
-      stdout.write("Enter Appointment Date: ");
-      var appointmentDate = stdin.readLineSync()!;
+        stdout.write("Enter Appointment Date: ");
+        var appointmentDate = stdin.readLineSync()!;
 
-      Map<String, dynamic> appoinments = {
-        'Dr Name': drName,
-        'Appoinment Day': appointmentDay,
-        'Appoinment Date': appointmentDate,
-        'Appoinment Time': appointmentTime
-      };
-      addAppointment['appoinmentSchedule'].add(appoinments);
-      foundPatient = true;
-      print('');
+        Map<String, dynamic> appoinments = {
+          'Dr Name': drName,
+          'Appoinment Day': appointmentDay,
+          'Appoinment Date': appointmentDate,
+          'Appoinment Time': appointmentTime
+        };
+        addAppointment['appoinmentSchedule'].add(appoinments);
+        foundPatient = true;
+        print('');
+      }
     }
-  }
-  if (foundPatient == false) {
-    print('Invaild Id or Name!');
-  } else {
-    print('Add Appoinment Schedule Successfully');
-  }
+    if (foundPatient == false) {
+      print('Invaild Id or Name!');
+    } else {
+      print('Add Appoinment Schedule Successfully');
+    }
   }
 }
 
@@ -211,7 +204,7 @@ appoinmentsSchedule() {
 viewAppoinmentsSchedule() {
   print('***=== View Appoinment Schedule ===***');
   print('');
-  
+
   for (int i = 0; i < patientList.length; i++) {
     Map<String, dynamic> patient = patientList[i];
     List<dynamic> appoinmentSchedle = patient['appoinmentSchedule'];
@@ -240,15 +233,16 @@ viewAppoinmentsSchedule() {
   }
 }
 
+List<Map<String, dynamic>> newPatientUpdate = [];
 // update functions
-updateAddPatient (){
-  if (patientList.isEmpty){
+updateAddPatient() {
+  if (patientList.isEmpty) {
     print('No Patient Records to Update');
   } else {
     stdout.write('Enter you Id: ');
     int id = int.parse(stdin.readLineSync()!);
 
-    for (int i = 0; i < patientList.length; i++){
+    for (int i = 0; i < patientList.length; i++) {
       Map<String, dynamic> newPatientList = patientList[i];
       print('Name: ${newPatientList['name']}');
       print('Age: ${newPatientList['age']}');
@@ -256,5 +250,20 @@ updateAddPatient (){
       print('Gender: ${newPatientList['gender']}');
       print('Address: ${newPatientList['address']}');
     }
+    
+    print('');
+    stdout.write('Enter Name for update: ');
+    String updateName = (stdin.readLineSync()!);
+    stdout.write('Enter your Age: ');
+    int updateAge = int.parse(stdin.readLineSync()!);
+    stdout.write('Enter your Phone No: ');
+    int updatePhoneNo = int.parse(stdin.readLineSync()!);
+    stdout.write('Enter your Gender: ');
+    String updateGender = (stdin.readLineSync()!);
+    stdout.write('Enter your Address: ');
+    String updateAddress = (stdin.readLineSync()!);
+    print("");
+
+    Map<String, dynamic> updatePatient = {};
   }
 }
