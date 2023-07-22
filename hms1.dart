@@ -242,5 +242,11 @@ updateAddPatient (){
     print('No Patient Records to Update');
   } else {
     stdout.write('Enter you Id: ');
+    int id = int.parse(stdin.readLineSync()!);
+
+    for (int i = 0; i < patientList.length; i++){
+      Map<String, dynamic> newPatientList = patientList[i];
+      print('Name: ${newPatientList['name']}');
+    }
   }
 }
