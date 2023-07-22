@@ -30,22 +30,22 @@ pageOne() {
     if (option == 1) {
       addPatient();
     }
-    if (option == 2) {
+    else if (option == 2) {
       viewPatientRecords();
     }
-    if (option == 3) {
+    else if (option == 3) {
       deletePatient();
     }
-    if (option == 4) {
+    else if (option == 4) {
       searchPatients();
     }
-    if (option == 5) {
+    else if (option == 5) {
       appoinmentsSchedule();
     }
-    if (option == 6) {
+    else if (option == 6) {
       viewAppoinmentsSchedule();
     }
-    if (option == 7){
+    else if (option == 7){
       condition = false;
       print('Exited');
     }
@@ -114,6 +114,9 @@ viewPatientRecords() {
 deletePatient() {
   print('***=== Delete Patient ===***');
   print('');
+  if (patientList.isEmpty){
+    print('No Patient Record for Delete');
+  } else {
   stdout.write('Enter you Id: ');
   int deleteId = int.parse(stdin.readLineSync()!);
   bool foundPatient = patientList.any((element) => element['id'] == deleteId);
@@ -124,12 +127,16 @@ deletePatient() {
   } else {
     print('Patient Data Not Found!');
   }
+  }
 }
 
 // Search Function
 searchPatients() {
   print('***=== Search Patient ===***');
   print('');
+  if (patientList.isEmpty){
+    print('No Paitent Record For Search');
+  } else {
   stdout.write('Enter Id: ');
   int idInput = int.parse(stdin.readLineSync()!);
   print('');
@@ -143,13 +150,17 @@ searchPatients() {
       print('Gender: ${searchPatient['gender']}');
       print('Address: ${searchPatient['address']}');
     } else {
-      print('Patient data not found');
+      print('Invalid Patient Id');
     }
+  }
   }
 }
 
 // Add patient Appoinments Schedule
 appoinmentsSchedule() {
+  if (patientList.isEmpty){
+    print('No Patient Available for Schedule');
+  } else {
   stdout.write('Enter you Id: ');
   int appoinmentId = int.parse(stdin.readLineSync()!);
   stdout.write('Enter you Name: ');
@@ -185,9 +196,10 @@ appoinmentsSchedule() {
     }
   }
   if (foundPatient == false) {
-    print('No patient found! please add patient first');
+    print('Invaild Id or Name!');
   } else {
     print('Add Appoinment Schedule Successfully');
+  }
   }
 }
 
@@ -195,6 +207,7 @@ appoinmentsSchedule() {
 viewAppoinmentsSchedule() {
   print('***=== View Appoinment Schedule ===***');
   print('');
+  
   for (int i = 0; i < patientList.length; i++) {
     Map<String, dynamic> patient = patientList[i];
     List<dynamic> appoinmentSchedle = patient['appoinmentSchedule'];
@@ -207,7 +220,6 @@ viewAppoinmentsSchedule() {
       print('');
       for (int j = 0; j < appoinmentSchedle.length; j++) {
         Map<String, dynamic> appoinments = appoinmentSchedle[j];
-        print('Patients: ${patient.length}');
         print('');
         print('Appoinments: ${j + 1}');
         print('Patient Id: ${patient['id']}');
