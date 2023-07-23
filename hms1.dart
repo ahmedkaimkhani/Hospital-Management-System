@@ -276,8 +276,13 @@ updateAddPatient() {
 
     for (int j = 0; j < patientList.length; j++){
       Map<String, dynamic> updatedList = patientList[j];
+      
       if (updatedList['id'] == updateId){
-
+              print('Name: ${updatedList['name']}');
+      print('Age: ${updatedList['age']}');
+      print('Phone Number: ${updatedList['phoneNo']}');
+      print('Gender: ${updatedList['gender']}');
+      print('Address: ${updatedList['address']}');
       }
     }
   }
