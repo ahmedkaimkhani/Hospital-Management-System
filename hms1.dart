@@ -272,5 +272,6 @@ updateAddPatient() {
       'UpdateAddress': updateAddress
     };
     patientList.add(updatePatient);
+    patientList.replaceRange(0, patientList.length, newPatientUpdate);
   }
 }
