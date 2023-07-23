@@ -257,7 +257,7 @@ updateAddPatient() {
   if (!patientFound) {
     print('Patient with ID $updateId not found!');
     return;
-  }
+  } else {
 
   Map<String, dynamic> patientToUpdate = patientList[patientIndex];
   print('Current Details:');
@@ -286,4 +286,5 @@ updateAddPatient() {
   patientToUpdate['address'] = updateAddress;
 
   print('Patient details updated successfully!');
+}
 }
