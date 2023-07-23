@@ -32,17 +32,17 @@ pageOne() {
       addPatient();
     } else if (option == 2) {
       viewPatientRecords();
-    } else if (option == 3) {
-      deletePatient();
-    } else if (option == 4) {
-      searchPatients();
-    } else if (option == 5) {
-      appoinmentsSchedule();
-    } else if (option == 6) {
-      viewAppoinmentsSchedule();
-    } else if (option == 7) {
+    }else if (option == 3) {
       updateAddPatient();
-    } else if (option == 8) {
+    } else if (option == 4) {
+      deletePatient();
+    } else if (option == 5) {
+      searchPatients();
+    } else if (option == 6) {
+      appoinmentsSchedule();
+    } else if (option == 7) {
+      viewAppoinmentsSchedule();
+    }  else if (option == 8) {
       condition = false;
       print('Exited');
     }
@@ -233,58 +233,45 @@ viewAppoinmentsSchedule() {
   }
 }
 
-// update functions
+// update add patient method
 updateAddPatient() {
   if (patientList.isEmpty) {
     print('No Patient Records to Update');
-    return;
-  }
+  } else {
+    stdout.write('Enter the ID of the patient you want to update:');
+    int updateId = int.parse(stdin.readLineSync()!);
 
-  stdout.write('Enter the ID of the patient you want to update: ');
-  int updateId = int.parse(stdin.readLineSync()!);
+    for (int i = 0; i < patientList.length; i++) {
+      if (patientList[i]['id'] == updateId) {
+        Map<String, dynamic> patientToUpdate = patientList[i];
+        print('Current Details:');
+        print('Name: ${patientToUpdate['name']}');
+        print('Age: ${patientToUpdate['age']}');
+        print('Phone Number: ${patientToUpdate['phoneNo']}');
+        print('Gender: ${patientToUpdate['gender']}');
+        print('Address: ${patientToUpdate['address']}');
 
-  bool patientFound = false;
-  int patientIndex = 0;
+        stdout.write('Enter Name for update: ');
+        String updateName = stdin.readLineSync()!;
+        stdout.write('Enter the new Age: ');
+        int updateAge = int.parse(stdin.readLineSync()!);
+        stdout.write('Enter the new Phone No: ');
+        int updatePhoneNo = int.parse(stdin.readLineSync()!);
+        stdout.write('Enter the new Gender: ');
+        String updateGender = stdin.readLineSync()!;
+        stdout.write('Enter the new Address: ');
+        String updateAddress = stdin.readLineSync()!;
 
-  for (int i = 0; i < patientList.length; i++) {
-    if (patientList[i]['id'] == updateId) {
-      patientFound = true;
-      patientIndex = i;
-      break;
+        patientToUpdate['name'] = updateName;
+        patientToUpdate['age'] = updateAge;
+        patientToUpdate['phoneNo'] = updatePhoneNo;
+        patientToUpdate['gender'] = updateGender;
+        patientToUpdate['address'] = updateAddress;
+
+        print('Patient details updated successfully!');
+      } else {
+        print('Patient with ID $updateId not found!');
+      }
     }
   }
-
-  if (!patientFound) {
-    print('Patient with ID $updateId not found!');
-    return;
-  } else {
-
-  Map<String, dynamic> patientToUpdate = patientList[patientIndex];
-  print('Current Details:');
-  print('Name: ${patientToUpdate['name']}');
-  print('Age: ${patientToUpdate['age']}');
-  print('Phone Number: ${patientToUpdate['phoneNo']}');
-  print('Gender: ${patientToUpdate['gender']}');
-  print('Address: ${patientToUpdate['address']}');
-
-  stdout.write('Enter Name for update: ');
-  String updateName = stdin.readLineSync()!;
-  stdout.write('Enter the new Age: ');
-  int updateAge = int.parse(stdin.readLineSync()!);
-  stdout.write('Enter the new Phone No: ');
-  int updatePhoneNo = int.parse(stdin.readLineSync()!);
-  stdout.write('Enter the new Gender: ');
-  String updateGender = stdin.readLineSync()!;
-  stdout.write('Enter the new Address: ');
-  String updateAddress = stdin.readLineSync()!;
-
-  // Updating the patient details
-  patientToUpdate['name'] = updateName;
-  patientToUpdate['age'] = updateAge;
-  patientToUpdate['phoneNo'] = updatePhoneNo;
-  patientToUpdate['gender'] = updateGender;
-  patientToUpdate['address'] = updateAddress;
-
-  print('Patient details updated successfully!');
-}
 }
