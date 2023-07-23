@@ -15,11 +15,11 @@ pageOne() {
     print('');
     print('Press 1: Add Patient');
     print('Press 2: View Patients Records');
-    print('Press 3: Delete Patient');
-    print('Press 4: Search Patients');
-    print('Press 5: Appoinments Schedule');
-    print('Press 6: View Appoinments Schedule');
-    print('Press 7: Update Patient Record');
+    print('Press 3: Update Patient Record');
+    print('Press 4: Delete Patient');
+    print('Press 5: Search Patients');
+    print('Press 6: Appoinments Schedule');
+    print('Press 7: View Appoinments Schedule');
     print('Press 8: Exit Program');
 
     print('');
