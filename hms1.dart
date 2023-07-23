@@ -240,7 +240,7 @@ updateAddPatient() {
     print('No Patient Records to Update');
   } else {
     stdout.write('Enter you Id: ');
-    int id = int.parse(stdin.readLineSync()!);
+    int updateId = int.parse(stdin.readLineSync()!);
 
     for (int i = 0; i < patientList.length; i++) {
       Map<String, dynamic> newPatientList = patientList[i];
@@ -273,5 +273,12 @@ updateAddPatient() {
     };
     patientList.add(updatePatient);
     patientList.replaceRange(0, patientList.length, newPatientUpdate);
+
+    for (int j = 0; j < patientList.length; j++){
+      Map<String, dynamic> updatedList = patientList[j];
+      if (updatedList['id'] == updateId){
+
+      }
+    }
   }
 }
