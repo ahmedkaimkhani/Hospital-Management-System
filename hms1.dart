@@ -233,57 +233,57 @@ viewAppoinmentsSchedule() {
   }
 }
 
-List<Map<String, dynamic>> newPatientUpdate = [];
 // update functions
 updateAddPatient() {
   if (patientList.isEmpty) {
     print('No Patient Records to Update');
-  } else {
-    stdout.write('Enter you Id: ');
-    int updateId = int.parse(stdin.readLineSync()!);
+    return;
+  }
 
-    for (int i = 0; i < patientList.length; i++) {
-      Map<String, dynamic> newPatientList = patientList[i];
-      print('Name: ${newPatientList['name']}');
-      print('Age: ${newPatientList['age']}');
-      print('Phone Number: ${newPatientList['phoneNo']}');
-      print('Gender: ${newPatientList['gender']}');
-      print('Address: ${newPatientList['address']}');
-    }
-    
-    print('');
-    stdout.write('Enter Name for update: ');
-    String updateName = (stdin.readLineSync()!);
-    stdout.write('Enter your Age: ');
-    int updateAge = int.parse(stdin.readLineSync()!);
-    stdout.write('Enter your Phone No: ');
-    int updatePhoneNo = int.parse(stdin.readLineSync()!);
-    stdout.write('Enter your Gender: ');
-    String updateGender = (stdin.readLineSync()!);
-    stdout.write('Enter your Address: ');
-    String updateAddress = (stdin.readLineSync()!);
-    print("");
+  stdout.write('Enter the ID of the patient you want to update: ');
+  int updateId = int.parse(stdin.readLineSync()!);
 
-    Map<String, dynamic> updatePatient = {
-      'UpdateName': updateName,
-      'UpdateAge': updateAge,
-      'UpdatePhoneNo': updatePhoneNo,
-      'UpdateGender': updateGender,
-      'UpdateAddress': updateAddress
-    };
-    patientList.add(updatePatient);
-    patientList.replaceRange(0, patientList.length, newPatientUpdate);
+  bool patientFound = false;
+  int patientIndex = 0;
 
-    for (int j = 0; j < patientList.length; j++){
-      Map<String, dynamic> updatedList = patientList[j];
-      
-      if (updatedList['id'] == updateId){
-              print('Name: ${updatedList['name']}');
-      print('Age: ${updatedList['age']}');
-      print('Phone Number: ${updatedList['phoneNo']}');
-      print('Gender: ${updatedList['gender']}');
-      print('Address: ${updatedList['address']}');
-      }
+  for (int i = 0; i < patientList.length; i++) {
+    if (patientList[i]['id'] == updateId) {
+      patientFound = true;
+      patientIndex = i;
+      break;
     }
   }
+
+  if (!patientFound) {
+    print('Patient with ID $updateId not found!');
+    return;
+  }
+
+  Map<String, dynamic> patientToUpdate = patientList[patientIndex];
+  print('Current Details:');
+  print('Name: ${patientToUpdate['name']}');
+  print('Age: ${patientToUpdate['age']}');
+  print('Phone Number: ${patientToUpdate['phoneNo']}');
+  print('Gender: ${patientToUpdate['gender']}');
+  print('Address: ${patientToUpdate['address']}');
+
+  stdout.write('Enter Name for update: ');
+  String updateName = stdin.readLineSync()!;
+  stdout.write('Enter the new Age: ');
+  int updateAge = int.parse(stdin.readLineSync()!);
+  stdout.write('Enter the new Phone No: ');
+  int updatePhoneNo = int.parse(stdin.readLineSync()!);
+  stdout.write('Enter the new Gender: ');
+  String updateGender = stdin.readLineSync()!;
+  stdout.write('Enter the new Address: ');
+  String updateAddress = stdin.readLineSync()!;
+
+  // Updating the patient details
+  patientToUpdate['name'] = updateName;
+  patientToUpdate['age'] = updateAge;
+  patientToUpdate['phoneNo'] = updatePhoneNo;
+  patientToUpdate['gender'] = updateGender;
+  patientToUpdate['address'] = updateAddress;
+
+  print('Patient details updated successfully!');
 }
