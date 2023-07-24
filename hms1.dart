@@ -269,10 +269,9 @@ updateAddPatient() {
         patientToUpdate['address'] = updateAddress;
 
         print('Patient details updated successfully!');
-      } else if (!(patientList[i]['id'] == updateId)){
+      } else {
         print('Patient with ID $updateId not found!');
-      } 
+      }
     }
   }
 }
-// print('Patient with ID $updateId not found!');
