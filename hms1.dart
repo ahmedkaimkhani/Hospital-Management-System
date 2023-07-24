@@ -269,6 +269,7 @@ updateAddPatient() {
       stdout.write('Enter the new Address: ');
       String updateAddress = stdin.readLineSync()!;
 
+      print('');
       patientToUpdate['name'] = updateName;
       patientToUpdate['age'] = updateAge;
       patientToUpdate['phoneNo'] = updatePhoneNo;
