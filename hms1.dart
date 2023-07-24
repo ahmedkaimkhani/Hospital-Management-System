@@ -276,7 +276,7 @@ updateAddPatient() {
       patientToUpdate['gender'] = updateGender;
       patientToUpdate['address'] = updateAddress;
 
-      print('Patient details updated successully!');
+      print('Patient details updated successfully!');
     }
   }
 }
